@@ -1,5 +1,18 @@
 # respeaker-stream
 
+Streaming audio form a microphone(respeaker) on rpi zero 2 w to an Icecast server using ffmpeg
+
+### Requirements
+ - Raspberry pi zero 2 W
+ - respeaker
+
+### Installations
+```
+sudo apt update
+sudo apt install ffmpeg alsa-utils icecast2 libmp3lame
+```
+
+
 ffmpeg -f alsa -i hw:0 -acodec libmp3lame -ar 16000 -ac 2 -f mp3 icecast://source:ha
 ckme@localhost:8000/stream
 
